@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A65E85B51AC85CBF4DC2A75 /* Pods_TestView_TestViewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46A3E3B6B5849F0B07B947 /* Pods_TestView_TestViewUITests.framework */; };
 		6129DCC5B19BD12F0CF0C122 /* Pods_TestView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275DF7A60833671D8B8891A1 /* Pods_TestView.framework */; };
-		C857ABE229BFA71100B92A74 /* DetaileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C857ABE129BFA71100B92A74 /* DetaileUIView.swift */; };
-		C8A4D59A29C0DF2000A4911E /* DetailetestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4D59829C0DF2000A4911E /* DetailetestViewController.swift */; };
-		C8A4D59B29C0DF2000A4911E /* DetailetestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A4D59929C0DF2000A4911E /* DetailetestViewController.xib */; };
 		C8A7517229B78BAF00A97582 /* CallNaverMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7517129B78BAF00A97582 /* CallNaverMapAPI.swift */; };
 		C8BCBD1729B2130600D81488 /* TestViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E6976329ADAEC400FCB86B /* TestViewUITests.swift */; };
 		C8BCBD2629B213D400D81488 /* Pods-TestView.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B13F6F1EDD8BAA782982B733 /* Pods-TestView.debug.xcconfig */; };
@@ -58,9 +55,6 @@
 		6772071CF4EC8489377C4555 /* Pods-TestViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestViewTests.debug.xcconfig"; path = "Target Support Files/Pods-TestViewTests/Pods-TestViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B13F6F1EDD8BAA782982B733 /* Pods-TestView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestView.debug.xcconfig"; path = "Target Support Files/Pods-TestView/Pods-TestView.debug.xcconfig"; sourceTree = "<group>"; };
 		B24B7735DBE50A5F31EF3AAF /* Pods-TestView-TestViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestView-TestViewUITests.release.xcconfig"; path = "Target Support Files/Pods-TestView-TestViewUITests/Pods-TestView-TestViewUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C857ABE129BFA71100B92A74 /* DetaileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaileUIView.swift; sourceTree = "<group>"; };
-		C8A4D59829C0DF2000A4911E /* DetailetestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailetestViewController.swift; sourceTree = "<group>"; };
-		C8A4D59929C0DF2000A4911E /* DetailetestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailetestViewController.xib; sourceTree = "<group>"; };
 		C8A7517129B78BAF00A97582 /* CallNaverMapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallNaverMapAPI.swift; sourceTree = "<group>"; };
 		C8BCBD2329B213C100D81488 /* TestView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8BCBD2429B213C100D81488 /* TestViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,10 +149,7 @@
 				C8E6974129ADAEC200FCB86B /* SceneDelegate.swift */,
 				C8E6974329ADAEC200FCB86B /* ViewController.swift */,
 				C8A7517129B78BAF00A97582 /* CallNaverMapAPI.swift */,
-				C857ABE129BFA71100B92A74 /* DetaileUIView.swift */,
 				C8C0A5CF29B70C7200A2F5D1 /* MapDetaileViewController.swift */,
-				C8A4D59829C0DF2000A4911E /* DetailetestViewController.swift */,
-				C8A4D59929C0DF2000A4911E /* DetailetestViewController.xib */,
 				C8C0A5D029B70C7200A2F5D1 /* MapDetaileViewController.xib */,
 				C8E6974529ADAEC200FCB86B /* Main.storyboard */,
 				C8E6974B29ADAEC400FCB86B /* Assets.xcassets */,
@@ -296,7 +287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8BCBD2729B2140400D81488 /* Pods-TestView.release.xcconfig in Resources */,
-				C8A4D59B29C0DF2000A4911E /* DetailetestViewController.xib in Resources */,
 				C8E6974F29ADAEC400FCB86B /* LaunchScreen.storyboard in Resources */,
 				C8C0A5D229B70C7200A2F5D1 /* MapDetaileViewController.xib in Resources */,
 				C8BCBD2A29B2140A00D81488 /* Pods-TestViewTests.debug.xcconfig in Resources */,
@@ -434,11 +424,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E6974A29ADAEC200FCB86B /* TestView.xcdatamodeld in Sources */,
-				C8A4D59A29C0DF2000A4911E /* DetailetestViewController.swift in Sources */,
 				C8C0A5D129B70C7200A2F5D1 /* MapDetaileViewController.swift in Sources */,
 				C8E6974429ADAEC200FCB86B /* ViewController.swift in Sources */,
 				C8E6974029ADAEC200FCB86B /* AppDelegate.swift in Sources */,
-				C857ABE229BFA71100B92A74 /* DetaileUIView.swift in Sources */,
 				C8A7517229B78BAF00A97582 /* CallNaverMapAPI.swift in Sources */,
 				C8E6974229ADAEC200FCB86B /* SceneDelegate.swift in Sources */,
 			);

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,15 +33,14 @@
                     </items>
                 </navigationBar>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GOL-qG-c1e">
-                    <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                    <rect key="frame" x="0.0" y="103" width="393" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="393" id="HZz-js-G9a"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="qDM-Lb-wXG"/>
+                        <constraint firstAttribute="height" constant="40" id="qDM-Lb-wXG"/>
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgR-Qy-DVT">
-                    <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                    <rect key="frame" x="0.0" y="143" width="393" height="675"/>
                     <color key="backgroundColor" systemColor="systemCyanColor"/>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oR9-5C-ZoR">
@@ -55,10 +55,9 @@
                                 <constraint firstAttribute="height" constant="100" id="RDT-CW-hLv"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlp-su-yIi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlp-su-yIi">
                             <rect key="frame" x="150" y="41" width="200" height="25"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="25" id="CZQ-ZF-xh2"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="TV8-cN-Wmj"/>
                                 <constraint firstAttribute="width" constant="200" id="jj6-wD-3CB"/>
                             </constraints>
@@ -66,11 +65,15 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-aY-d6h">
-                            <rect key="frame" x="251" y="148" width="117" height="25"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-aY-d6h">
+                            <rect key="frame" x="248.33333333333334" y="139" width="124.66666666666666" height="35"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zj-yZ-Jls">
-                                    <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="25"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="8YU-zX-ZdG"/>
+                                        <constraint firstAttribute="width" constant="58.329999999999998" id="QNT-OM-dW3"/>
+                                    </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="확인"/>
                                     <connections>
@@ -78,7 +81,11 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8I-VB-SjG">
-                                    <rect key="frame" x="63.666666666666686" y="0.0" width="53.333333333333343" height="25"/>
+                                    <rect key="frame" x="66.333333333333343" y="0.0" width="58.333333333333343" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="p1S-Kz-LRq"/>
+                                        <constraint firstAttribute="width" constant="58.329999999999998" id="wLt-Tn-cJG"/>
+                                    </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="취소"/>
                                     <connections>
@@ -86,19 +93,15 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="hUE-bO-G3r"/>
-                                <constraint firstAttribute="width" constant="117" id="y95-k7-0bC"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="xlp-su-yIi" firstAttribute="leading" secondItem="hzb-NL-q2b" secondAttribute="trailing" constant="25" id="E9A-mt-VNu"/>
+                        <constraint firstAttribute="bottom" secondItem="aeh-aY-d6h" secondAttribute="bottom" constant="8" id="EKF-qp-hmW"/>
                         <constraint firstItem="hzb-NL-q2b" firstAttribute="leading" secondItem="oR9-5C-ZoR" secondAttribute="leading" constant="25" id="Pm9-Js-1qq"/>
                         <constraint firstItem="xlp-su-yIi" firstAttribute="top" secondItem="oR9-5C-ZoR" secondAttribute="top" constant="41" id="UM6-uA-QNW"/>
-                        <constraint firstItem="aeh-aY-d6h" firstAttribute="top" secondItem="xlp-su-yIi" secondAttribute="bottom" constant="82" id="UnV-5c-jff"/>
-                        <constraint firstItem="aeh-aY-d6h" firstAttribute="leading" secondItem="oR9-5C-ZoR" secondAttribute="leading" constant="251" id="cAS-EN-eQW"/>
+                        <constraint firstItem="aeh-aY-d6h" firstAttribute="leading" secondItem="oR9-5C-ZoR" secondAttribute="leading" constant="248.33000000000001" id="hXN-9N-H1U"/>
                         <constraint firstItem="hzb-NL-q2b" firstAttribute="top" secondItem="oR9-5C-ZoR" secondAttribute="top" constant="41" id="mbn-1x-poa"/>
                         <constraint firstAttribute="bottom" secondItem="hzb-NL-q2b" secondAttribute="bottom" constant="41" id="x8j-a5-aE2"/>
                     </constraints>
@@ -112,10 +115,10 @@
                 <constraint firstItem="oR9-5C-ZoR" firstAttribute="bottom" secondItem="xxg-vs-Kgb" secondAttribute="bottom" id="8M5-OM-dv4"/>
                 <constraint firstItem="z8m-yC-I1j" firstAttribute="trailing" secondItem="xxg-vs-Kgb" secondAttribute="trailing" id="B5q-Gu-URI"/>
                 <constraint firstItem="oR9-5C-ZoR" firstAttribute="trailing" secondItem="xxg-vs-Kgb" secondAttribute="trailing" id="C2a-mF-rgn"/>
-                <constraint firstItem="GOL-qG-c1e" firstAttribute="trailing" secondItem="xxg-vs-Kgb" secondAttribute="trailing" id="Dey-Wd-jOI"/>
+                <constraint firstItem="GOL-qG-c1e" firstAttribute="trailing" secondItem="xxg-vs-Kgb" secondAttribute="trailing" id="ED7-oi-Rgq"/>
                 <constraint firstItem="jgR-Qy-DVT" firstAttribute="leading" secondItem="xxg-vs-Kgb" secondAttribute="leading" id="Hih-8a-kDw"/>
+                <constraint firstItem="GOL-qG-c1e" firstAttribute="leading" secondItem="xxg-vs-Kgb" secondAttribute="leading" id="KnT-Kx-JAY"/>
                 <constraint firstItem="jgR-Qy-DVT" firstAttribute="top" secondItem="GOL-qG-c1e" secondAttribute="bottom" id="Ode-k7-ftQ"/>
-                <constraint firstItem="GOL-qG-c1e" firstAttribute="leading" secondItem="xxg-vs-Kgb" secondAttribute="leading" id="Tta-1M-OTQ"/>
                 <constraint firstItem="z8m-yC-I1j" firstAttribute="leading" secondItem="xxg-vs-Kgb" secondAttribute="leading" id="UlR-SC-vCe"/>
                 <constraint firstItem="xxg-vs-Kgb" firstAttribute="trailing" secondItem="jgR-Qy-DVT" secondAttribute="trailing" id="Y7x-Gn-gls"/>
                 <constraint firstItem="GOL-qG-c1e" firstAttribute="top" secondItem="z8m-yC-I1j" secondAttribute="bottom" id="b00-y7-hKG"/>

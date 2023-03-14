@@ -8,10 +8,16 @@
 import UIKit
 import NMapsMap
 
+protocol AddressDataDelegate: AnyObject
+{
+    func addressDatas(xData:Double,yData:Double,addressData:String)
+}
 /**
     지도의 상세화 ViewController
  */
 class MapDetaileViewController: UIViewController {
+    
+    var addressDataDelegate: AddressDataDelegate? = nil
     
     @IBOutlet var mapApp: UIView!   // 지도
     
@@ -62,6 +68,8 @@ class MapDetaileViewController: UIViewController {
         
         view.bringSubviewToFront(detaileUIView)
         
+        addressLabel.lineBreakMode = .byWordWrapping
+        addressLabel.numberOfLines = 2
     }
     
     // Naver Map 지도 함수
@@ -154,6 +162,8 @@ class MapDetaileViewController: UIViewController {
         print("=========  확인  =========")
         print("=========================")
         print("")
+        
+        addressDataDelegate?.addressDatas(xData: self.naverXData!, yData: self.naverYData!, addressData: addressLabel.text!)
         
         dismiss(animated: true)
     }

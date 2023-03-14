@@ -32,13 +32,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-GJ-dfZ">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-GJ-dfZ">
                                 <rect key="frame" x="70" y="69" width="50" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="NLR-7G-2oV"/>
-                                    <constraint firstAttribute="width" constant="50" id="bGp-le-jz1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="bGp-le-jz1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,8 +70,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="dyJ-GJ-dfZ" id="3hl-ex-rHC"/>
                         <outlet property="detaileMapBtn" destination="rID-JS-3rb" id="k0E-1D-Gac"/>
-                        <outlet property="label" destination="dyJ-GJ-dfZ" id="Ubk-84-Mxw"/>
                         <outlet property="naverMapView" destination="0SM-xS-j57" id="OsA-u3-Iev"/>
                         <outlet property="stackView" destination="Daj-lN-ApQ" id="sBj-cf-KNo"/>
                         <outlet property="stackViewSwitch" destination="sbJ-LP-TYT" id="rCB-Wo-Pj0"/>

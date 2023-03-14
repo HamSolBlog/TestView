@@ -17,7 +17,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var naverMapView: UIView!         // naverMapView
     
-    @IBOutlet var label: UILabel!               // 주소 입력 Label
+    @IBOutlet var addressLabel: UILabel!        // 주소 입력 Label
+    
+    // 지도의 컨트롤을 내장한 지도 뷰 클래스.
+    let nMapView = NMFMapView(frame: UIScreen.main.bounds)
     
     // 앱에 위치 관련 이벤트 전달을 시작하고 중지하는 데 사용하는 객체.
     var locationManager = CLLocationManager()
@@ -63,21 +66,9 @@ class ViewController: UIViewController {
             // 사용자의 현재 위치를 보고하는 업데이트를 시작합니다.
             locationManager.startUpdatingLocation()
             
-            // 지도의 컨트롤을 내장한 지도 뷰 클래스.
-            let nMapView = NMFNaverMapView(frame : view.frame)
-            
             // frame = 슈퍼뷰의 좌표계에서 뷰의 위치와 크기를 설명하는 프레임 직사각형.
             // CGRect(x,y,width,height) = 직사각형의 위치와 치수를 포함하는 구조.
             nMapView.frame = CGRect(x: 0, y: 0, width: 373, height: 100)
-            
-            // 현 위치 버튼이 활성화되어 있는지 여부.
-            nMapView.showLocationButton = true
-            
-            // 줌 컨트롤 활성화 여부.
-            nMapView.showZoomControls = true
-            
-            // 카메라의 움직임에 대한 위임자를 등록합니다.
-            nMapView.mapView.addCameraDelegate(delegate: self)
             
             // 수신자의 하위 뷰 목록 끝에 뷰를 추가합니다.
             naverMapView.addSubview(nMapView)
@@ -102,10 +93,6 @@ class ViewController: UIViewController {
             print("============ 현재 위치 off ============")
             print("====================================")
             print("")
-        }
-        
-        if label.text == nil {
-            label.isHidden = true
         }
     }
     
@@ -185,6 +172,7 @@ class ViewController: UIViewController {
                 self.naverMapView.alpha = 1
                 self.detaileMapBtn.isHidden = false
                 self.naverMapView.isHidden = false
+                self.addressLabel.isHidden = false
             })
         }
         else
@@ -194,6 +182,7 @@ class ViewController: UIViewController {
                 self.naverMapView.alpha = 0
                 self.naverMapView.isHidden = true
                 self.detaileMapBtn.isHidden = true
+                self.addressLabel.isHidden = true
             })
         }
     }
@@ -226,6 +215,8 @@ class ViewController: UIViewController {
         
         let naverMapVC = MapDetaileViewController(nibName: "MapDetaileViewController", bundle: nil)
         
+        naverMapVC.addressDataDelegate = self
+        
         self.present(naverMapVC, animated: true)
     }
     
@@ -240,4 +231,18 @@ class ViewController: UIViewController {
 extension ViewController: NMFMapViewCameraDelegate ,CLLocationManagerDelegate
 {
     
+}
+
+extension ViewController: AddressDataDelegate
+{
+    func addressDatas(xData: Double, yData: Double, addressData: String) {
+        
+        stackView.reloadInputViews()
+        addressLabel.text = addressData
+        
+        nMapView.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(lat: yData, lng: xData)))
+        let marker = NMFMarker()
+        marker.position = NMGLatLng(lat: yData, lng: xData)
+        marker.mapView = self.nMapView
+    }
 }
